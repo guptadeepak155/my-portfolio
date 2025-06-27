@@ -1,0 +1,155 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="STYLE.CSS">
+</head>
+<body style="background-color: aquamarine;">
+  <nav id="desktop-nav">
+    <div class="logo">DEEPAK GUPTA</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="FEEDBACK.HTML">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- <nav id="hamburger-nav">
+    <div class="logo">DEEPAK GUPTA</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav> -->
+  <section id="profile">
+    <div style="display: flex; justify-content: space-between; max-width: 1400px; margin: 0px auto 20px;">
+      <div style="font-style: italic; font-weight: 600; font-size: larger;">"Believe in your infinite potential."</div>
+      <div style="font-style: italic; font-weight: 600; font-size: larger;">"Every line of code is a step forward."</div>
+    </div>
+    <div class="sections__pic-container">
+      <img src="./assets\front.png" alt="deepak">
+    </div>
+    <div class="section__text">
+      <p class="section__text__p1">Hello, I'm</p>
+      <h1 class="title">DEEPAK GUPTA</h1>
+      <span class="section__text__p2" id="element">Web Developer.</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true">|</span>
+      
+      <div class="btn-container">
+        <button class="btn btn-color-2" onclick="window.open('./Downloads\Deepak_Resume.pdf')">
+          Download CV
+        </button>
+        <button class="btn btn-color-1" onclick="location.href='#contact'">
+          Contact Info
+        </button>
+      </div>
+      <!-- <div id="socials-container">
+        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/deepak-gupta-a3985a280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'">
+      </div> -->
+    </div>
+  </section>
+  <section id="about" style="text-align: center;">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title">About Me</h1>
+    <div class="section-container">
+      <div class="section__pic-container">
+        <img src="./assets\about.jpeg" alt="Profile picture" class="about-pic">
+      </div>
+      <div class="about-details-container">
+        <div class="about-containers">
+          <div class="details-container" style="background-color: aquamarine;">
+            <img src="./assets/education.png" alt="Education icon" class="icon">
+            <h3>Education</h3>
+            <p style="font-weight: 800;">B.Sc-IT(7.72 CGPA) <br>Bachelors Degree</p>
+          
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am DEEPAK GUPTA, a recent Information Technology graduate from the University of Mumbai with
+            a strong focus on PYTHON development. <br>My academic projects, like "Society Management System,"
+            have honed my skills in python, and front-end technologies (HTML, CSS, JavaScript), alongside
+            database management with Phpmyadmin. I am passionate about utilizing my knowledge and skills in a dynamic
+            team to deliver innovative software solutions.
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'"> -->
+  </section>
+  <section id="projects" style="text-align: center;">
+    <p class="section__text__p1">Browse My Recent</p>
+    <h1 class="title">Projects</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets\society.png" alt="Project 1" class="project-img">
+          </div>
+          <h2 class="experience-sub-title project-title">Society Management System</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/guptadeepak155/society-management-system.git'">
+              Github
+            </button>
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://guptadeepak155.github.io/Society-Management-System/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets\Screenshot 2025-06-27 124010.png"" alt="Project 2" class="project-img">
+          </div>
+          <h2 class="experience-sub-title project-title">Personal Portfolio</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/guptadeepak155/my-portfolio.git'">
+              Github
+            </button>
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://my-personal-portfolio-esta.netlify.app/'">
+              Live Demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'"> -->
+  </section>
+  <section id="contact" style="text-align: center;">
+    <p  class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+    <div class="contact-info-upper-container">
+      <div class="contact-info-container">
+        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon">
+        <p><a href="mailto:deepakgupta15505@gmail.com">depakgupta15505@gmail.com</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon">
+        <p><a href="https://www.linkedin.com/in/deepak-gupta-a3985a280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a></p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <nav style="justify-content: center; ">
+      <div class="nav-links-container" >
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="FEEDBACK.HTML">Feedback</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p>Copyright © 2025 DEEPAK GUPTA. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
