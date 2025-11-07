@@ -1,445 +1,103 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="STYLE.CSS">
-  <style>
-            /* Reset some default styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    /* Fonts and base color setup */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    /* Navigation bar */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: #222;
-      color: white;
-    }
-
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .nav-links li a:hover {
-      color: #00aaff;
-    }
-
-    /* Hamburger nav (mobile) */
-    #hamburger-nav {
-      display: none;
-    }
-
-    .hamburger-menu {
-      position: relative;
-    }
-
-    .hamburger-icon {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .hamburger-icon span {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 4px;
-    }
-
-    .menu-links {
-      display: none;
-      position: absolute;
-      top: 30px;
-      background-color: #222;
-      padding: 1rem;
-      border-radius: 5px;
-    }
-
-    .menu-links li {
-      list-style: none;
-      margin: 10px 0;
-    }
-
-    .menu-links a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .menu-links.active {
-      display: block;
-    }
-
-    /* Section styling */
-    section {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    /* Profile Section */
-    .sections__pic-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 2rem;
-      width: 100%;
-    }
-
-    .sections__pic-container img {
-      width: 100%;
-      max-width: 250px;
-      border-radius: 10px;
-    }
-
-    .section__text {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .title {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .section__text__p1,
-    .section__text__p2 {
-      font-size: 1.2rem;
-      color: #555;
-    }
-
-    /* Buttons */
-    .btn-container {
-      margin-top: 1.5rem;
-    }
-
-    .btn {
-      padding: 10px 20px;
-      border: none;
-      margin: 5px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .btn-color-1 {
-      background-color: #0077cc;
-      color: white;
-    }
-
-    .btn-color-2 {
-      background-color: white;
-      color: #0077cc;
-      border: 1px solid #0077cc;
-    }
-
-    .btn-color-1:hover,
-    .btn-color-2:hover {
-      background-color: #005fa3;
-      color: white;
-    }
-
-    /* Icons */
-    .icon {
-      width: 30px;
-      cursor: pointer;
-      margin: 0 5px;
-    }
-
-    .icon.arrow {
-      margin-top: 2rem;
-    }
-
-    /* About Section */
-    .section-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    .section__pic-container {
-      flex: 1;
-      display: flex;
-      justify-content: flex-start;
-    }
-
-    .section__pic-container img.about-pic {
-      width: 100%;
-      max-width: 250px;
-      border-radius: 15px;
-    }
-
-    .about-details-container {
-      flex: 2;
-      max-width: 600px;
-    }
-
-    .details-container {
-      background-color: white;
-      padding: 1rem;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    /* Projects */
-    .experience-details-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .project-img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .color-container {
-      background-color: white;
-      padding: 1rem;
-      border-radius: 10px;
-      width: 300px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    /* Contact */
-    .contact-info-upper-container {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .contact-info-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .contact-icon {
-      width: 25px;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #222;
-      color: white;
-      padding: 1.5rem 2rem;
-      text-align: center;
-    }
-
-    footer .nav-links {
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    /* Responsive */
-    @media screen and (max-width: 768px) {
-      #desktop-nav {
-        display: none;
-      }
-
-      #hamburger-nav {
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem 2rem;
-        background-color: #222;
-      }
-
-      .section-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .section__pic-container {
-        justify-content: center;
-      }
-
-      .about-details-container {
-        text-align: center;
-      }
-
-      .experience-details-container {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Deepak Gupta — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: aquamarine;">
-  <nav id="desktop-nav">
-    <div class="logo">DEEPAK GUPTA</div>
-    <div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="FEEDBACK.HTML">Feedback</a></li>
-      </ul>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="image/download.jfif" alt="logo" class="brand-logo">
+      <span class="brand-name">Deepak Gupta</span>
     </div>
-  </nav>
-  <!-- <nav id="hamburger-nav">
-    <div class="logo">DEEPAK GUPTA</div>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="menu-links">
-        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-      </div>
-    </div>
-  </nav> -->
-  <section id="profile">
-    <div style="display: flex; justify-content: space-between; max-width: 1400px; margin: 0px auto 20px;">
-      <div style="font-style: italic; font-weight: 600; font-size: larger;">"Believe in your infinite potential."</div>
-      <div style="font-style: italic; font-weight: 600; font-size: larger;">"Every line of code is a step forward."</div>
-    </div>
-    <div class="sections__pic-container">
-      <img src="./assets\front.png" alt="deepak">
-    </div>
-    <div class="section__text">
-      <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title">DEEPAK GUPTA</h1>
-      <span class="section__text__p2" id="element">Web Developer.</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true">|</span>
-      
-      <div class="btn-container">
-        <button class="btn btn-color-2" onclick="window.open('./Downloads\Deepak_Resume.pdf')">
-          Download CV
-        </button>
-        <button class="btn btn-color-1" onclick="location.href='#contact'">
-          Contact Info
-        </button>
-      </div>
-      <!-- <div id="socials-container">
-        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/deepak-gupta-a3985a280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'">
-      </div> -->
-    </div>
-  </section>
-  <section id="about" style="text-align: center;">
-    <p class="section__text__p1">Get To Know More</p>
-    <h1 class="title">About Me</h1>
-    <div class="section-container">
-      <div class="section__pic-container">
-        <img src="./assets\about.jpeg" alt="Profile picture" class="about-pic">
-      </div>
-      <div class="about-details-container">
-        <div class="about-containers">
-          <div class="details-container" style="background-color: aquamarine;">
-            <img src="./assets/education.png" alt="Education icon" class="icon">
-            <h3>Education</h3>
-            <p style="font-weight: 800;">B.Sc-IT(7.72 CGPA) <br>Bachelors Degree</p>
-          
-          <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am DEEPAK GUPTA, a recent Information Technology graduate from the University of Mumbai with
-            a strong focus on PYTHON development. <br>My academic projects, like "Society Management System,"
-            have honed my skills in python, and front-end technologies (HTML, CSS, JavaScript), alongside
-            database management with Phpmyadmin. I am passionate about utilizing my knowledge and skills in a dynamic
-            team to deliver innovative software solutions.
-          </p>
-          </div>
+    <nav class="topnav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="FEEDBACK.html">Contact</a>
+      <a class="btn small ghost" href="resume.pdf" download>Download CV</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="hero-inner">
+        <h1 id="hero-heading">Hi, I'm <strong>Deepak Gupta</strong></h1>
+        <p class="lead">I build beautiful and usable web experiences — frontend, backend and full-stack projects with care for performance and UX.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn ghost" href="FEEDBACK.html">Contact me</a>
         </div>
-      </div>
-    </div>
-    <!-- <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'"> -->
-  </section>
-  <section id="projects" style="text-align: center;">
-    <p class="section__text__p1">Browse My Recent</p>
-    <h1 class="title">Projects</h1>
-    <div class="experience-details-container">
-      <div class="about-containers">
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets\society.png" alt="Project 1" class="project-img">
-          </div>
-          <h2 class="experience-sub-title project-title">Society Management System</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/guptadeepak155/society-management-system.git'">
-              Github
-            </button>
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://guptadeepak155.github.io/Society-Management-System/'">
-              Live Demo
-            </button>
-          </div>
-        </div>
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets\Screenshot 2025-06-27 124010.png"" alt="Project 2" class="project-img">
-          </div>
-          <h2 class="experience-sub-title project-title">Personal Portfolio</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/guptadeepak155/my-portfolio.git'">
-              Github
-            </button>
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://my-personal-portfolio-esta.netlify.app/'">
-              Live Demo
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'"> -->
-  </section>
-  <section id="contact" style="text-align: center;">
-    <p  class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
-      <div class="contact-info-container">
-        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon">
-        <p><a href="mailto:deepakgupta15505@gmail.com">depakgupta15505@gmail.com</a></p>
-      </div>
-      <div class="contact-info-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon">
-        <p><a href="https://www.linkedin.com/in/deepak-gupta-a3985a280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a></p>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <nav style="justify-content: center; ">
-      <div class="nav-links-container" >
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="FEEDBACK.HTML">Feedback</a></li>
+        <ul class="hero-meta">
+          <li><strong>Role</strong> Full-stack Developer</li>
+          <li><strong>Location</strong> Mumbai, India</li>
         </ul>
       </div>
-    </nav>
-    <p>Copyright © 2025 DEEPAK GUPTA. All Rights Reserved.</p>
+
+      <div class="hero-image-card" aria-hidden="true">
+        <img src="image/penne-alfredo-pasta.jpg" alt="Project snapshot" class="hero-image">
+        <div class="image-badge">React • Node • MongoDB</div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section container">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I’m a BSc IT graduate and web developer passionate about building modern, responsive, and user-friendly applications. I work with both frontend and backend technologies to create smooth and efficient digital experiences.</p>
+          <p><strong>Currently:</strong> Working on full-stack projects using MERN stack and improving my Flutter skills.</p>
+          <div class="about-actions">
+            <a class="btn primary" href="#projects">See my work</a>
+            <a class="btn ghost" href="mailto:guptadeepak155@gmail.com">Email me</a>
+          </div>
+        </div>
+        <div class="about-card">
+          <img src="image/download.jfif" alt="Profile photo" class="profile-photo">
+          <ul class="about-list">
+            <li><strong>Education</strong><span>BSc IT (2022–2025)</span></li>
+            <li><strong>Experience</strong><span>Web Development</span></li>
+            <li><strong>Tools</strong><span>VS Code, GitHub, Figma</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-filters" role="tablist" aria-label="Skill categories">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="frontend">Frontend</button>
+        <button class="chip" data-filter="backend">Backend</button>
+        <button class="chip" data-filter="tools">Tools</button>
+      </div>
+      <div class="skills-grid" id="skillsGrid"></div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Deepak Gupta</div>
+      <div class="socials">
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="mailto:guptadeepak155@gmail.com" aria-label="Email">Email</a>
+      </div>
+    </div>
   </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
