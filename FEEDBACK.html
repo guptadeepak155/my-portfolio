@@ -1,130 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Feedback Form</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #74ebd5, #acb6e5);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .horizontal-container {
-      background: white;
-      padding: 20px 25px;
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 350px;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 15px;
-      font-size: 22px;
-      color: #333;
-    }
-
-    .form-group {
-      margin-bottom: 12px;
-    }
-
-    label {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 4px;
-      color: #555;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 8px 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 60px;
-    }
-
-    button[type="submit"] {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      background-color: #0077cc;
-      color: white;
-      font-size: 15px;
-      font-weight: bold;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #005fa3;
-    }
-
-    #responseMessage {
-      text-align: center;
-      margin-top: 10px;
-      color: green;
-      font-weight: bold;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Deepak Gupta</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="horizontal-container">
-    <h1>Feedback Form</h1>
-    <form id="feedbackForm">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+  <!-- Header -->
+  <header class="topbar">
+    <div class="brand">
+      <img src="image/download.jfif" alt="logo" class="brand-logo">
+      <span class="brand-name">Deepak Gupta</span>
+    </div>
+    <nav class="topnav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="FEEDBACK.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <main>
+    <section class="section container">
+      <h2 class="section-title">Get in Touch</h2>
+      <p style="text-align:center; max-width:600px; margin:0 auto 24px; color:#5c4033;">
+        Have a project in mind, collaboration idea, or just want to say hi?  
+        Drop me a message below and I’ll get back to you soon.
+      </p>
+
+      <form id="feedbackForm" class="contact-section" novalidate>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+        <input type="text" id="subject" name="subject" placeholder="Subject (optional)">
+        <textarea id="message" name="message" placeholder="Your message..." rows="6" required></textarea>
+
+        <div class="contact-actions">
+          <button type="submit" class="btn primary">Send Message</button>
+          <button type="reset" class="btn ghost">Clear</button>
+        </div>
+        <p class="muted small" style="text-align:center;">
+          Messages are saved locally (demo). Replace this with your backend API later.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Deepak Gupta</div>
+      <div class="socials">
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="mailto:guptadeepak155@gmail.com" aria-label="Email">Email</a>
       </div>
-      <div class="form-group">
-        <label for="phoneNumber">Phone Number:</label>
-        <input type="text" id="phoneNumber" name="phoneNumber" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-      </div>
-      <div class="form-group">
-        <label for="feedback">Feedback:</label>
-        <textarea id="feedback" name="feedback" required></textarea>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
-    <div id="responseMessage"></div>
-  </div>
-<script>
-  document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from reloading the page
-    // Show a welcome message
-    const responseMessage = document.getElementById('responseMessage');
-    responseMessage.textContent = "Thank you! We will contact you in a few minutes.";
-    responseMessage.style.color = "#f70606"; // Optional styling
-    // Optionally clear the form
-    this.reset();
-  });
-</script>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // Toast helper
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const form = document.getElementById('feedbackForm');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+
+        if (!name || !email || !message) {
+          showToast('Please fill all required fields.');
+          return;
+        }
+
+        const data = {
+          name, email, message,
+          date: new Date().toISOString()
+        };
+
+        // demo — save locally
+        const saved = JSON.parse(localStorage.getItem('contact_msgs') || '[]');
+        saved.push(data);
+        localStorage.setItem('contact_msgs', JSON.stringify(saved));
+
+        form.reset();
+        showToast('✅ Message sent successfully!');
+      });
+    });
+  </script>
 </body>
 </html>
