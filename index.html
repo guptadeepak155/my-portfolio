@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Deepak Gupta — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- LOADER -->
+  <div id="site-loader" class="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="image/ChatGPT Image Nov 17, 2025, 01_45_58 PM.png" alt="Deepak" class="logo square" />
+        <div class="brand-text">
+          <div class="name">Deepak Gupta</div>
+          <div class="subtitle">Full-Stack Developer (MERN)</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a href="Deepak_Resumes1.pdf" class="btn btn-sm" download>Download CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero section">
+      <div class="container hero-inner reveal">
+        <div class="hero-left">
+          <h1 class="hero-title">Hi, I’m <span class="accent">Deepak Gupta</span></h1>
+          <p class="lead" id="typed-line"></p>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+            <a href="Deepak_Resumes1.pdf" class="btn btn-sm" download>Resume</a>
+          </div>
+
+          <ul class="meta-list">
+            <li><strong>Education:</strong> BSc IT — Guru Nanak College (2022–2025)</li>
+            <li><strong>Location:</strong> Mumbai, India</li>
+            <li><strong>Status:</strong> Fresher — project experience</li>
+          </ul>
+        </div>
+
+        <aside class="hero-right">
+          <div class="card-glass">
+            <img src="image/front.png" alt="project snapshot" class="hero-image square" />
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container reveal">
+        <h2 class="section-title">About</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I’m a full-stack developer skilled in the MERN stack, Python, HTML, CSS, JavaScript, and MongoDB. 
+              I build clean, responsive, and user-focused applications. I enjoy solving problems, improving user experience, 
+              and turning ideas into reliable products. I work well in teams, communicate clearly, and stay committed to learning and improvement.
+            </p>
+
+            <div class="small-ctas">
+              <a class="btn" href="#projects">See projects</a>
+              <a class="btn btn-outline" href="mailto:deepakgupta15505@gmail.com">Email</a>
+            </div>
+          </div>
+          <div class="about-card">
+            <img src="image/about.jpeg" alt="profile" class="profile-photo square" />
+            <ul class="about-list">
+              <li><strong>Education:</strong> BSc IT (2022–2025)</li>
+              <li><strong>Experience:</strong> Fresher (project-based)</li>
+              <li><strong>Tools:</strong> VS Code, Git, Power BI</li>
+              <li><strong>Languages:</strong> English, Hindi, Marathi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section bg-soft">
+      <div class="container reveal">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-filters" aria-hidden="true">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="frontend">Frontend</button>
+          <button class="chip" data-filter="backend">Backend</button>
+          <button class="chip" data-filter="tools">Tools</button>
+        </div>
+
+        <div id="skillsGrid" class="skills-grid">
+          <!-- JS will populate -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container reveal">
+        <h2 class="section-title">Selected Projects</h2>
+        <h3 class="muted center" style="text-align: center;">A few recent projects — click to view demo or source.</h3>
+
+        <div id="projectsGrid" class="projects-grid">
+          <!-- JS will populate -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container reveal">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Get in touch</h3>
+            <p class="muted"><h4> Open to full-time Web Developer roles. I enjoy building clean, reliable applications and contributing to teams that value good engineering and continuous improvement</h4></p>
+            <ul class="contact-list">
+              <li><strong>Email:</strong> <a href="mailto:deepakgupta15505@gmail.com">deepakgupta15505@gmail.com</a></li>
+              <li><strong>Phone:</strong> <a href="tel:+918652495309">+91 86524 95309</a></li>
+              <li><strong>Location:</strong> Mumbai, India</li>
+            </ul>
+          </div>
+
+          <form id="contactForm" class="contact-form" onsubmit="return handleContact(event)">
+            <label>
+              <span>Name</span>
+              <input id="cname" type="text" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input id="cemail" type="email" required />
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea id="cmessage" rows="5" required></textarea>
+            </label>
+
+            <div class="form-actions">
+              <button class="btn" type="submit">Send message</button>
+            </div>
+            <div id="formMsg" class="muted small"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Deepak Gupta</div>
+      <div class="muted">Built with HTML, CSS & JavaScript</div>
+    </div>
+  </footer>
+
+  <!-- VanillaTilt (CDN) for tilt effect -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

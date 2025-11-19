@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Feedback Form</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="form-container">
+  <h1>Feedback Form</h1>
+  <form id="feedbackForm">
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <textarea id="feedback" placeholder="Feedback" required></textarea>
+      <button  class="back-btn" onclick="window.location.href='index.html'" type="button">Back</button>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="responseMessage"></div>
+</div>
+
+<script>
+document.getElementById('feedbackForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('responseMessage').textContent = "Thank you! We will contact you soon.";
+  this.reset();
+});
+</script>
+</body>
+</html>
